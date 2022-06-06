@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220606 08:19:04.690" rpa="false" schemaversion="3">
+<suite id="s1" name="Validarpet" source="C:\Faculdade COBRA\API\test-case\Validarpet.robot">
+<test id="s1-t1" name="Cenário 1 - Cadastrando PET" line="7">
+<kw name="realizo o cadastro do PET &quot;10060&quot; na API" library="apiPet" sourcename="realizo o cadastro do PET &quot;${cadastrando_PET}&quot; na API">
+<kw name="POST" library="REST">
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>{"name": "Jake","photoUrls": ["fafa"],"id": ${Cadastrando_PET},"category": {"id": 59190497,"name": "vava"},"tags": [{"id": 2121,"name": "dodo"}],"status": "pending"}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:05.163" endtime="20220606 08:19:05.802"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:05.163" endtime="20220606 08:19:05.802"/>
+</kw>
+<kw name="O retorno do servico é &quot;200&quot;" library="apiPet" sourcename="O retorno do servico é &quot;${status_code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status_code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20220606 08:19:05.803" endtime="20220606 08:19:05.805"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:05.802" endtime="20220606 08:19:05.805"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:05.162" endtime="20220606 08:19:05.805"/>
+</test>
+<test id="s1-t2" name="Cenário 2 - Consultando PET cadastrado" line="14">
+<kw name="realizo o cadastro do PET &quot;10060&quot; na API" library="apiPet" sourcename="realizo o cadastro do PET &quot;${cadastrando_PET}&quot; na API">
+<kw name="POST" library="REST">
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>{"name": "Jake","photoUrls": ["fafa"],"id": ${Cadastrando_PET},"category": {"id": 59190497,"name": "vava"},"tags": [{"id": 2121,"name": "dodo"}],"status": "pending"}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:05.807" endtime="20220606 08:19:06.388"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:05.807" endtime="20220606 08:19:06.388"/>
+</kw>
+<kw name="Realizo consulta de PET &quot;10060&quot;" library="apiPet" sourcename="Realizo consulta de PET &quot;${PET_cadastrado}&quot;">
+<kw name="GET" library="REST">
+<arg>https://petstore.swagger.io/v2/pet/${PET_cadastrado}</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:06.389" endtime="20220606 08:19:07.007"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:06.389" endtime="20220606 08:19:07.007"/>
+</kw>
+<kw name="O retorno do servico é &quot;200&quot;" library="apiPet" sourcename="O retorno do servico é &quot;${status_code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status_code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20220606 08:19:07.008" endtime="20220606 08:19:07.009"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:07.008" endtime="20220606 08:19:07.009"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:05.806" endtime="20220606 08:19:07.010"/>
+</test>
+<test id="s1-t3" name="Cenário 3 - Excluindo PET cadastrado" line="22">
+<kw name="realizo o cadastro do PET &quot;10060&quot; na API" library="apiPet" sourcename="realizo o cadastro do PET &quot;${cadastrando_PET}&quot; na API">
+<kw name="POST" library="REST">
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>{"name": "Jake","photoUrls": ["fafa"],"id": ${Cadastrando_PET},"category": {"id": 59190497,"name": "vava"},"tags": [{"id": 2121,"name": "dodo"}],"status": "pending"}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:07.011" endtime="20220606 08:19:07.615"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:07.011" endtime="20220606 08:19:07.615"/>
+</kw>
+<kw name="Realizo a exclusao do PET &quot;10060&quot;" library="apiPet" sourcename="Realizo a exclusao do PET &quot;${PET_cadastrado}&quot;">
+<kw name="DELETE" library="REST">
+<arg>https://petstore.swagger.io/v2/pet/${PET_cadastrado}</arg>
+<tag>http</tag>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:07.616" endtime="20220606 08:19:08.223"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:07.616" endtime="20220606 08:19:08.223"/>
+</kw>
+<kw name="O retorno do servico é &quot;200&quot;" library="apiPet" sourcename="O retorno do servico é &quot;${status_code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status_code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20220606 08:19:08.224" endtime="20220606 08:19:08.225"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:08.224" endtime="20220606 08:19:08.225"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:07.010" endtime="20220606 08:19:08.225"/>
+</test>
+<test id="s1-t4" name="Cenário 4 - Consultando PET não existente" line="30">
+<kw name="Realizo a exclusao do PET &quot;10060&quot;" library="apiPet" sourcename="Realizo a exclusao do PET &quot;${PET_cadastrado}&quot;">
+<kw name="DELETE" library="REST">
+<arg>https://petstore.swagger.io/v2/pet/${PET_cadastrado}</arg>
+<tag>http</tag>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:08.227" endtime="20220606 08:19:08.822"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:08.226" endtime="20220606 08:19:08.822"/>
+</kw>
+<kw name="Realizo consulta de PET &quot;10060&quot;" library="apiPet" sourcename="Realizo consulta de PET &quot;${PET_cadastrado}&quot;">
+<kw name="GET" library="REST">
+<arg>https://petstore.swagger.io/v2/pet/${PET_cadastrado}</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20220606 08:19:08.823" endtime="20220606 08:19:09.438"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:08.823" endtime="20220606 08:19:09.438"/>
+</kw>
+<kw name="O retorno do servico é &quot;404&quot;" library="apiPet" sourcename="O retorno do servico é &quot;${status_code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status_code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20220606 08:19:09.439" endtime="20220606 08:19:09.440"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:09.439" endtime="20220606 08:19:09.440"/>
+</kw>
+<status status="PASS" starttime="20220606 08:19:08.226" endtime="20220606 08:19:09.441"/>
+</test>
+<status status="PASS" starttime="20220606 08:19:04.692" endtime="20220606 08:19:09.442"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Validarpet">Validarpet</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
