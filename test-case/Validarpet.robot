@@ -2,6 +2,7 @@
 #vanderlan é legal
 *** Settings ***    
 Resource         ../resource/apiPet.robot
+Library 
 
 *** Test Cases ***
 Cenário 1 - Cadastrando PET 
